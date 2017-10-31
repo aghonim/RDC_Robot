@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171031 14:49:09.583" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\dpgn7791\Desktop\RDC_robot\Tests\AddphoneBook.robot" id="s1" name="AddphoneBook">
+<test id="s1-t1" name="Test Find Phone Book">
+<kw type="setup" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Create API Session</arg>
+<arg>login</arg>
+</arguments>
+<kw name="Create API Session" library="common">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>rdapisession</arg>
+<arg>${baseurl}</arg>
+</arguments>
+<msg timestamp="20171031 14:49:10.318" level="INFO">Creating Session using : alias=rdapisession, url=https://io.datasync.orange.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20171031 14:49:10.318" starttime="20171031 14:49:10.317"></status>
+</kw>
+<status status="PASS" endtime="20171031 14:49:10.318" starttime="20171031 14:49:10.317"></status>
+</kw>
+<kw name="login" library="common">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>alias=rdapisession</arg>
+<arg>uri=/auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20171031 14:49:31.331" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040B8A58&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+<msg timestamp="20171031 14:49:52.559" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040B88D0&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+<msg timestamp="20171031 14:50:13.988" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040FB6D8&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+<msg timestamp="20171031 14:50:34.994" level="FAIL">ConnectionError: HTTPSConnectionPool(host='io.datasync.orange.com', port=443): Max retries exceeded with url: /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd (Caused by NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040FBA90&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',))</msg>
+<status status="FAIL" endtime="20171031 14:50:34.994" starttime="20171031 14:49:10.319"></status>
+</kw>
+<status status="FAIL" endtime="20171031 14:50:34.995" starttime="20171031 14:49:10.318"></status>
+</kw>
+<status status="FAIL" endtime="20171031 14:50:34.995" starttime="20171031 14:49:10.317"></status>
+</kw>
+<tags>
+<tag>az</tag>
+</tags>
+<status status="FAIL" endtime="20171031 14:50:34.995" critical="yes" starttime="20171031 14:49:10.316">Setup failed:
+ConnectionError: HTTPSConnectionPool(host='io.datasync.orange.com', port=443): Max retries exceeded with url: /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd (Caused by NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040FBA90&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',))</status>
+</test>
+<status status="FAIL" endtime="20171031 14:50:34.997" starttime="20171031 14:49:09.587"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">az</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="AddphoneBook" pass="0">AddphoneBook</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20171031 14:49:31.331" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040B8A58&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+<msg timestamp="20171031 14:49:52.559" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040B88D0&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+<msg timestamp="20171031 14:50:13.988" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x00000000040FB6D8&gt;: Failed to establish a new connection: [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)': /auth/base?email=worker%40orange.com&amp;password=12345678&amp;base=crd</msg>
+</errors>
+</robot>
